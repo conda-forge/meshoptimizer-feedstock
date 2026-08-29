@@ -21,4 +21,5 @@ cmake -S . -B build-demo -G Ninja ${CMAKE_ARGS} \
     -DMESHOPT_BUILD_DEMO=ON \
     -DMESHOPT_BUILD_GLTFPACK=OFF
 cmake --build build-demo --target demo --parallel "${CPU_COUNT}"
-install -Dm755 build-demo/meshoptdemo "${PREFIX}/bin/meshoptdemo"
+mkdir -p "${PREFIX}/bin"
+install -m 755 build-demo/meshoptdemo "${PREFIX}/bin/meshoptdemo"
